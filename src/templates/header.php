@@ -24,8 +24,6 @@
             if($_SESSION['loggedin']==true)
             {
               //if user is logged in, print navigation options
-              print '<li><a href="stories.php">Stories</a></li>';
-              print '<li><a href="upload.php">Upload</a></li>';
               print '<li><a href="email.php">Contact</a></li>';
               //if user is admin, print admin options
               if($_SESSION['admin'] == 'Y')

@@ -41,9 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 {
                     print '<p>The user has been registered!</p>';
                     //create user directory
-                    mkdir("../users/$username");
+                    mkdir($user_dir);
                     //create books.csv
-                    touch("../users/$username/books.csv");
+                    touch($user_dir."/books.csv");
                 } 
                 else 
                 {

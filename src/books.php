@@ -59,10 +59,9 @@ else
     print "
     <h2>Example Books</h2>
     <ul>
-        <li>The Catcher in the Rye</li>
-        <li>Nine Stories</li>
-        <li>Franny and Zooey</li>
-        <li>Raise High the Roof Beam, Carpenters and Seymour: An Introduction</li>
+        <li>Assembly Language for x86 Processors by Kip Irvine</li>
+        <li>Java How to Program by Paul and Harvey Deitel</li>
+        <li>The Rust Programming Language by Steve Klabnik and Carol Nichols</li>
     </ul>
     ";
 }

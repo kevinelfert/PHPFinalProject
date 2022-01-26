@@ -15,7 +15,7 @@ if($_SESSION != [])
     else 
     {
         //email form
-        print '<h2>Email Form</h2>
+        print '<h2>Send Me an Email!</h2>
         <form method="POST" action="email.php" class="form--inline">
             <p>Email Address: <input type="email" name="email" required></p>
             <p>Subject: <input type="text" name="subject" required></p>
@@ -43,6 +43,7 @@ if($_SESSION != [])
             $mail->SMTPSecure = $SMTPsecure;                       
             $mail->Port = $port;                                 
             $mail->addAddress($username); 
+
             $mail->FromName = $email;            
             $mail->Subject = $subject;              
             $mail->Body = $message;          
