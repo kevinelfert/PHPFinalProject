@@ -33,17 +33,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             $hash_pass = password_hash($password, PASSWORD_DEFAULT);
             if(mysqli_num_rows($result) == 0)
             {
-                //create user directory path
-                $user_dir = "../users/$username";
                 //add user to table
-                $query = "INSERT INTO users (username, password, user_dir, status, admin) VALUES ('$username', '$password', '$user_dir', 'OPEN', 'N')";
+                $query = "INSERT INTO users (username, password, status, admin) VALUES ('$username', '$password', 'OPEN', 'N')";
                 if (mysqli_query($dbc, $query)) 
                 {
                     print '<p>The user has been registered!</p>';
-                    //create user directory
-                    mkdir($user_dir);
-                    //create books.csv
-                    touch($user_dir."/books.csv");
                 } 
                 else 
                 {

@@ -22,19 +22,11 @@ if($_SESSION != [] && $_SESSION['admin']=='Y')
         {
             $status = 'DELETED';
             //delete user from table
-            $delete_query = "DELETE FROM users WHERE username='$username'";
-            mysqli_query($dbc, $delete_query);
-            //delete users/$username
-            $search_dir = "../users/$username/";
-            $contents = scandir($search_dir);
-            foreach($contents as $filename)
-            {
-                if(is_file($search_dir . '/' . $filename))
-                {
-                    unlink($search_dir . '/' . $filename);
-                }
-            }
-            rmdir("../users/$username");
+            $delete_user_query = "DELETE FROM users WHERE username='$username'";
+            mysqli_query($dbc, $delete_user_query);
+            
+            $delete_books_query = "DELETE FROM books WHERE user='$username'";
+            mysqli_query($dbc, $delete_books_query);
         }
         else
         {
